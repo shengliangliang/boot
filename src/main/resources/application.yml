@@ -1,6 +1,48 @@
 server:
   port: 8080
 
+
+#查看springboot开启了哪些配置
+debug: false
+
+spring:
+  profiles:
+    active: dev
+
+---
+#开发环境配置
+spring:
+  profiles: dev
+
+server:
+  port: 8080
+
+---
+#测试环境配置
+spring:
+  profiles: test
+
+server:
+  port: 8081
+
+---
+#生产环境配置
+spring:
+  profiles: prod
+
+server:
+  port: 8082
+
+
+
+
+#配置actuator可访问所有节点
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+
 spring:
     datasource:
         name: test
@@ -26,3 +68,10 @@ spring:
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.winter.model
+
+
+
+system:
+  serverId: apple
+
+
