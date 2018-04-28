@@ -12,7 +12,7 @@ import java.util.List;
 public class TestServiceImpl implements TestService {
 
     @Autowired
-    private TestMapper userMapper;
+    private TestMapper testMapper;
 
 
     @Override
@@ -23,6 +23,6 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public void insert(Test test) {
-        userMapper.insert(test);
+        testMapper.insert(test);
     }
 }
